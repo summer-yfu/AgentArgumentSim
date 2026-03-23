@@ -1,0 +1,83 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+
+# Secrets / identity — NEVER commit
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+id_rsa
+id_rsa.pub
+*credentials*.json
+serviceAccount*.json
+google-services.json
+GoogleService-Info.plist
+secrets/
+
+# ConnectOnion runtime (rebuild with co init / co auth)
+.co/logs/
+.co/evals/
+.co/config.toml
+
+# ChromaDB (rebuild with rag/build_index.py)
+rag/law_db/
+
+# User-uploaded documents
+rag/uploads/*.pdf
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.cursor/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Unity & Visual Studio
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+UserSettings/
+MemoryCaptures/
+Recordings/
+
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# Test / debug
+chathistory/
+*.log
+.pytest_cache/
