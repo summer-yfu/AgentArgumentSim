@@ -8,7 +8,7 @@ Uses [ConnectOnion](https://docs.connectonion.com) for agents, tools, and auth.
 ## Manual setup
 
 ```bash
-python3 -m venv .venv && source .venv/bin/activate
+python3 -m venv argumentsim  && source argumentsim/bin/activate
 pip install -r requirements.txt
 co init          # if you do not already have .co/config.toml
 co auth
@@ -18,7 +18,7 @@ python rag/build_index.py --local --rebuild
 
 ## To run the game
 ```bash
-uvicorn main:app --reload --port 8191 # run in terminal
+python -m uvicorn main:app --reload --port 8191 # run in terminal
 ```
 then open built unity game.
 
