@@ -22,28 +22,28 @@ source .venv/bin/activate
 echo "Installing dependencies..."
 pip install -r requirements.txt
 
-# 4. ConnectOnion project (.co/) — same idea as browser-agent manual setup
-if [ ! -f ".co/config.toml" ]; then
-    echo ""
-    echo "Initializing ConnectOnion project (co init)..."
-    co init
-fi
+# # 4. ConnectOnion project (.co/) — same idea as browser-agent manual setup
+# if [ ! -f ".co/config.toml" ]; then
+#     echo ""
+#     echo "Initializing ConnectOnion project (co init)..."
+#     co init
+# fi
 
-# 5. Authenticate ConnectOnion (interactive)
-echo ""
-echo "Authenticating ConnectOnion (co auth)..."
-co auth
+# # 5. Authenticate ConnectOnion (interactive)
+# echo ""
+# echo "Authenticating ConnectOnion (co auth)..."
+# co auth
 
-# 6. Build the law index (local embeddings by default)
-echo ""
-echo "Building NSW tenancy law index..."
-python rag/build_index.py --local --rebuild
+# # 6. Build the law index (local embeddings by default)
+# echo ""
+# echo "Building NSW tenancy law index..."
+# python rag/build_index.py --local --rebuild
 
-echo ""
-echo "=== Setup complete ==="
-echo ""
-echo "Optional: cp .env.example .env for OPENONION_API_KEY / RAG vars (see README Environment)."
-echo ""
-echo "Start the backend with:"
-echo "  source .venv/bin/activate"
-echo "  uvicorn main:app --reload --port 8191"
+# echo ""
+# echo "=== Setup complete ==="
+# echo ""
+# echo "Optional: cp .env.example .env for OPENONION_API_KEY / RAG vars (see README Environment)."
+# echo ""
+# echo "Start the backend with:"
+# echo "  source .venv/bin/activate"
+# echo "  uvicorn main:app --reload --port 8191"
