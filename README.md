@@ -7,7 +7,7 @@ Uses [ConnectOnion](https://docs.connectonion.com) for agents, tools, and auth.
 ## Quick start
 
 ```bash
-git clone <your-repo-url> && cd argument_agent
+git clone https://github.com/summer-yfu/AgentArgumentSim.git && cd AgentArgumentSim
 bash setup.sh
 source .venv/bin/activate
 uvicorn main:app --reload --port 8191
