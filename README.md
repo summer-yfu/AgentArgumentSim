@@ -4,14 +4,6 @@ Real-time **human vs AI argument** simulation: ConnectOnion agents (arguer + med
 
 Uses [ConnectOnion](https://docs.connectonion.com) for agents, tools, and auth.
 
-## Quick start
-
-```bash
-git clone https://github.com/summer-yfu/AgentArgumentSim.git && cd AgentArgumentSim
-bash setup.sh
-source .venv/bin/activate
-uvicorn main:app --reload --port 8191
-```
 
 ## Manual setup
 
@@ -21,6 +13,7 @@ pip install -r requirements.txt
 co init          # if you do not already have .co/config.toml
 co auth
 python rag/build_index.py --local --rebuild
+
 ```
 
 ## To run the game
