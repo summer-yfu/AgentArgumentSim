@@ -8,6 +8,8 @@ Uses [ConnectOnion](https://docs.connectonion.com) for agents, tools, and auth.
 ## Manual setup
 
 ```bash
+git clone https://github.com/summer-yfu/AgentArgumentSim.git
+cd AgentArgumentSim   
 python3 -m venv argumentsim  && source argumentsim/bin/activate
 pip install -r requirements.txt
 co init          # if you do not already have .co/config.toml
