@@ -24,6 +24,28 @@ class RevisedStanceResponse(BaseModel):
     )
 
 
+class FactCheckClaim(BaseModel):
+    claim: str = Field(..., description="The factual assertion extracted from the text")
+    verdict: str = Field(
+        "unclear",
+        description="supported / contradicted / unclear / mixed",
+    )
+    confidence: str = Field(
+        "low",
+        description="low / medium / high",
+    )
+    reason: str = Field("", description="Why this verdict, 1-2 sentences")
+    evidence: list[str] = Field(
+        default_factory=list,
+        description="Supporting or contradicting evidence snippets",
+    )
+
+
+class FactCheckResult(BaseModel):
+    claims: list[FactCheckClaim] = Field(default_factory=list)
+    summary: str = Field("", description="One-line overall assessment")
+
+
 class OpponentPersonalityAnalysis(BaseModel):
     opponent_traits: list[str] = Field(
         default_factory=lambda: ["neutral"],
