@@ -27,11 +27,11 @@ secrets/
 .co/evals/
 .co/config.toml
 
-# ChromaDB (rebuild with rag/build_index.py)
-rag/law_db/
+# ChromaDB (rebuild with backend/rag/build_index.py)
+backend/rag/law_db/
 
 # User-uploaded documents
-rag/uploads/*.pdf
+backend/rag/uploads/*.pdf
 
 # IDE
 .vscode/
@@ -79,5 +79,6 @@ Recordings/
 
 # Test / debug
 chathistory/
+data/chathistory/
 *.log
 .pytest_cache/

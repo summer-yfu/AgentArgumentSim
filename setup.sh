@@ -37,7 +37,7 @@ co auth
 # 6. Build the law index (local embeddings by default)
 echo ""
 echo "Building NSW tenancy law index..."
-python rag/build_index.py --local --rebuild
+python backend/rag/build_index.py --local --rebuild
 
 echo ""
 echo "=== Setup complete ==="
@@ -50,4 +50,4 @@ echo "  uvicorn main:app --reload --port 8191"
 echo ""
 echo "CLI (terminal debate, no Unity):"
 echo "  source .venv/bin/activate"
-echo "  python -m cli"
+echo "  PYTHONPATH=backend python -m cli"
