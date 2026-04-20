@@ -1,4 +1,4 @@
-<h1>Argument Agent <img src="assets/icon.png" width="36"></h1>
+# Argument Agent
 
 Real-time human vs AI argument simulation. Practice arguing with AI. Pick a topic, set up the scenario and AI personality, and go argue with a LLM agent. A mediator steps in if things go off the rails. Agent will change emotions during the argument.
 
@@ -56,8 +56,17 @@ uvicorn main:app --reload --port 8191
 **CLI mode**:
 
 ```bash
-PYTHONPATH=backend python -m cli
+python run_cli.py
 ```
+
+To enable fact-checking in CLI, run the factcheck agent in another terminal:
+
+```bash
+source argumentsim/bin/activate
+python run_factcheck.py
+```
+
+It prints an address on startup — copy it into `.env` as `FACTCHECK_ADDRESS=0x...`, then restart the CLI.
 
 
 
@@ -99,10 +108,22 @@ Toxicity limits, repetition thresholds, banned phrases, emotion allow-list, etc.
 
 ## Environment
 
-Copy `.env.example` to `.env`. Key variables:
+Copy `.env.example` to `.env`.
 
-- `OPENONION_API_KEY` — set by `co auth`
-- `USE_LOCAL_EMBEDDINGS=1` — use local embeddings for RAG (default)
-- `OPENAI_API_KEY` — only if using OpenAI embeddings
+**LLM provider** — by default agents use ConnectOnion (`co auth` sets up your key). You can also use your own API keys directly:
+
+| Provider | Env var | Model prefix |
+|----------|---------|-------------|
+| ConnectOnion (default) | `OPENONION_API_KEY` | `co/gemini-2.5-pro`, `co/gemini-2.5-flash` |
+| Anthropic | `ANTHROPIC_API_KEY` | `claude-opus-4-5` |
+| OpenAI | `OPENAI_API_KEY` | `gpt-4o` |
+| Google | `GEMINI_API_KEY` | `gemini-2.5-pro` |
+
+To switch provider, set your API key in `.env` and change the `model=` strings in `backend/agents/` and `backend/tasks/`. For example, change `model="co/gemini-2.5-pro"` to `model="gemini-2.5-pro"`.
+
+**Other variables:**
+
+- `USE_LOCAL_EMBEDDINGS=1` — local embeddings for RAG (default)
+- `OPENAI_API_KEY` — also needed if using OpenAI embeddings for RAG
 - `LOG_LEVEL` — optional (`DEBUG`, `INFO`, etc.)
 
