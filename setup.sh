@@ -10,13 +10,13 @@ python3 -c "import sys; assert sys.version_info >= (3, 10), f'Python 3.10+ requi
 }
 
 # 1. Create virtual environment if it doesn't exist
-if [ ! -d ".venv" ]; then
+if [ ! -d "argumentsim" ]; then
     echo "Creating virtual environment..."
-    python3 -m venv .venv
+    python3 -m venv argumentsim
 fi
 
 # 2. Activate
-source .venv/bin/activate
+source argumentsim/bin/activate
 
 # 3. Install dependencies
 echo "Installing dependencies..."
@@ -45,9 +45,9 @@ echo ""
 echo "Optional: cp .env.example .env for OPENONION_API_KEY / RAG vars (see README Environment)."
 echo ""
 echo "Start the backend with:"
-echo "  source .venv/bin/activate"
+echo "  source argumentsim/bin/activate"
 echo "  uvicorn main:app --reload --port 8191"
 echo ""
 echo "CLI (terminal debate, no Unity):"
-echo "  source .venv/bin/activate"
+echo "  source argumentsim/bin/activate"
 echo "  PYTHONPATH=backend python -m cli"

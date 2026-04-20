@@ -7,6 +7,7 @@ dist/
 build/
 .venv/
 venv/
+argumentsim/
 
 # Secrets / identity — NEVER commit
 .env
@@ -23,9 +24,7 @@ GoogleService-Info.plist
 secrets/
 
 # ConnectOnion runtime (rebuild with co init / co auth)
-.co/logs/
-.co/evals/
-.co/config.toml
+.co/
 
 # ChromaDB (rebuild with backend/rag/build_index.py)
 backend/rag/law_db/
